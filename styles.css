@@ -11,7 +11,7 @@
     --color-main-bg: #fff;
     --color-main-bg-2: #f6f6f6;
     --color-main-accent: #F88379;
-    --icon-theme-btn: url(assets/moon.svg);
+    --icon-theme-btn: url(./assets/moon.svg);
 }
 
 :root.dark {
@@ -20,7 +20,7 @@
     --color-main-bg: rgb(48, 48, 48);
     --color-main-bg-2: #242424;
     --color-main-accent: #F88379;
-    --icon-theme-btn: url(assets/sun.svg);
+    --icon-theme-btn: url(./assets/sun.svg);
 }
 
 body {
