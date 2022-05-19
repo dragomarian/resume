@@ -2,7 +2,50 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: none;
 }
+
+/* CURSOR EFFECTS */
+
+.hovered {
+    width: 20px;
+    height: 20px;
+    background-color: hsla(174, 100%, 50%, 0.1)!important;
+    border: 2px solid var(--color-main-accent);
+    animation: pulse 1.8s infinite ease-in-out;
+}
+
+/* .hovered::before {
+    content: 'Click me!';
+    font-size: 14px;
+    width: 100ch;
+    margin-left: 25px;
+    padding: 1px;
+    white-space: pre;
+    background-color: var(--color-main-accent);
+    color: #fff;
+    border-radius: 15%;
+} */
+
+
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-main-text);
+    transition: 0.03s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+div ~ #cursor {
+    transform: scale(5);
+}
+
 
 :root,
 :root.light {
@@ -238,52 +281,6 @@ main .exp-main-container .exp-item-container .job-desc ul {
 
 main .exp-main-container .exp-item-container .job-desc ul * {
     padding: 0 0 0 10px;
-}
-
-
-/* CURSOR EFFECTS */
-
-* {
-    cursor: none;
-}
-
-.hovered {
-    width: 20px;
-    height: 20px;
-    background-color: hsla(174, 100%, 50%, 0.1)!important;
-    border: 2px solid var(--color-main-accent);
-    animation: pulse 1.8s infinite ease-in-out;
-}
-
-/* .hovered::before {
-    content: 'Click me!';
-    font-size: 14px;
-    width: 100ch;
-    margin-left: 25px;
-    padding: 1px;
-    white-space: pre;
-    background-color: var(--color-main-accent);
-    color: #fff;
-    border-radius: 15%;
-} */
-
-
-.cursor {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--color-main-text);
-    transition: 0.03s;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    z-index: 99999;
-}
-
-div ~ #cursor {
-    transform: scale(5);
 }
 
 /* MOBILE OPTIMIZATION */
