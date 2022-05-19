@@ -10,7 +10,7 @@
     --color-main-text-2: rgb(77, 77, 77);
     --color-main-bg: #fff;
     --color-main-bg-2: #f6f6f6;
-    --color-main-accent: #F88379;
+    --color-main-accent: #16b075;
     --icon-theme-btn: url(./assets/moon.svg);
 }
 
@@ -19,7 +19,7 @@
     --color-main-text-2: rgb(175, 175, 175);
     --color-main-bg: rgb(48, 48, 48);
     --color-main-bg-2: #242424;
-    --color-main-accent: #F88379;
+    --color-main-accent: #16b075;
     --icon-theme-btn: url(./assets/sun.svg);
 }
 
@@ -76,7 +76,6 @@ body .lang-btn {
 body .theme-btn:hover,
 body .lang-btn:hover {
     background-color: var(--color-main-bg);
-    cursor: pointer;
 }
 
 body .img-clr {
@@ -241,22 +240,51 @@ main .exp-main-container .exp-item-container .job-desc ul * {
     padding: 0 0 0 10px;
 }
 
-/* LANGUAGE HANDLERS */
 
-html[lang="ro"] h2:lang(en),
-html[lang="ro"] p:lang(en),
-html[lang="ro"] li:lang(en),
-html[lang="ro"] h4:lang(en) {
-    display: none;
+/* CURSOR EFFECTS */
+
+* {
+    cursor: none;
 }
 
-html[lang="en"] h2:lang(ro),
-html[lang="en"] p:lang(ro),
-html[lang="en"] li:lang(ro),
-html[lang="en"] h4:lang(ro) {
-    display: none;
+.hovered {
+    width: 20px;
+    height: 20px;
+    background-color: hsla(174, 100%, 50%, 0.1)!important;
+    border: 2px solid var(--color-main-accent);
+    animation: pulse 1.8s infinite ease-in-out;
 }
 
+/* .hovered::before {
+    content: 'Click me!';
+    font-size: 14px;
+    width: 100ch;
+    margin-left: 25px;
+    padding: 1px;
+    white-space: pre;
+    background-color: var(--color-main-accent);
+    color: #fff;
+    border-radius: 15%;
+} */
+
+
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-main-text);
+    transition: 0.03s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+div ~ #cursor {
+    transform: scale(5);
+}
 
 /* MOBILE OPTIMIZATION */
 
@@ -355,5 +383,22 @@ main .exp-main-container {
         padding-top: 20px;
         grid-template-columns: 1fr;
         grid-template-rows: 15vh 15vh 1fr;
+    }
+}
+
+/* ANIMATIONS */
+
+@keyframes pulse {
+    0% {
+        width: 20px;
+        height: 20px;
+    }
+    50% {
+        width: 23px;
+        height: 23px;
+    }
+    100% {
+        width: 20px;
+        height: 20px;
     }
 }
