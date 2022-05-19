@@ -42,9 +42,7 @@
     z-index: 99999;
 }
 
-div ~ #cursor {
-    transform: scale(5);
-}
+/* /CURSOR EFFECTS/ */
 
 
 :root,
